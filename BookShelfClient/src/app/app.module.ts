@@ -1,0 +1,24 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BookComponent } from './book/book.component';
+import { ShowBookComponent } from './book/show-book/show-book.component';
+import { AddEditBookComponent } from './book/add-edit-book/add-edit-book.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    BookComponent,
+    ShowBookComponent,
+    AddEditBookComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
