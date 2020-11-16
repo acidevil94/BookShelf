@@ -1,3 +1,6 @@
 BookShelfAPI/BookShelfAPI/__pycache__/
 BookShelfAPI/BookShelfApp/__pycache__/
 BookShelfAPI/BookShelfApp/migrations/__pycache__/
+myenv/
+.vscode/
+*.sqlite3
