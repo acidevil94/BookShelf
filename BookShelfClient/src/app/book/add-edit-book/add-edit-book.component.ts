@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { SharedService } from 'src/app/shared.service';
+
+import { Book } from 'src/app/book/book';
 
 @Component({
   selector: 'app-add-edit-book',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: SharedService) { }
+
+  @Input() book:Book ;
+  BookName: string = "";
+  BookId:number = 0;
 
   ngOnInit(): void {
+    this.BookId = this.book.bookID;
+    this.BookName = this.book.bookName;
+  }
+
+
+  addClick(){
+    var val = Book.buildObjectForREST(this.BookId, this.BookName);
+  }
+
+  updateClick() {
+
   }
 
 }

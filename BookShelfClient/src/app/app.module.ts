@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
 import { ShowBookComponent } from './book/show-book/show-book.component';
 import { AddEditBookComponent } from './book/add-edit-book/add-edit-book.component';
+import { SharedService } from './shared.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +20,12 @@ import { AddEditBookComponent } from './book/add-edit-book/add-edit-book.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
