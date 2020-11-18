@@ -28,6 +28,22 @@ export class ShowBookComponent implements OnInit {
     this.ActivateAddEditBookComponent = true;
   }
 
+  deleteBookClick(book:Book) {
+
+    var userConf = confirm("Do You Want to delete '" + book.bookName + "'?");
+
+    if(userConf) {
+      this.service.deleteBook(book.bookID).subscribe(res => {
+        alert(res.toString());
+
+        this.refreshBookList();
+      });
+      
+    }
+
+    
+  }
+
 
   editBookClick(book:any) {
     this.MyBook = book;

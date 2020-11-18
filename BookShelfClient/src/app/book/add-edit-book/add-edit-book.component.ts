@@ -25,10 +25,16 @@ export class AddEditBookComponent implements OnInit {
 
   addClick(){
     var val = Book.buildObjectForREST(this.BookId, this.BookName);
+    this.service.addBook(val).subscribe(res => {
+      alert(res.toString());
+    });
   }
 
   updateClick() {
-
+    var val = Book.buildObjectForREST(this.BookId, this.BookName);
+    this.service.updateBook(val).subscribe(res => {
+      alert(res.toString());
+    });
   }
 
 }
